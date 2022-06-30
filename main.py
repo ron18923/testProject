@@ -6,8 +6,8 @@ from gemini.helpers import poloniex, analyze
 
 CMO_PERIOD = 9
 PAIR = "BTC_USDT"
-PERIOD = 1000
-DAYS_HISTORY = 20
+PERIOD = 300
+DAYS_HISTORY = 90
 
 OVERBOUGHT_VALUE = 50
 OVERSOLD_VALUE = -50
@@ -53,8 +53,8 @@ def cmo_trading_strategy(gemini: Gemini, data):
             gemini.account.enter_position(type_="Long",
                                           entry_capital=params['capital_base']*0.1,
                                           entry_price=data.iloc[-1]['high'])
-        else:
-            raise Exception
+        # else:
+        #     raise Exception
 
 
 if __name__ == '__main__':
