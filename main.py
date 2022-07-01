@@ -6,8 +6,8 @@ from gemini.helpers import poloniex, analyze
 
 CMO_PERIOD = 9
 PAIR = "BTC_USDT"
-PERIOD = 300
-DAYS_HISTORY = 90
+PERIOD = 900
+DAYS_HISTORY = 180
 
 OVERBOUGHT_VALUE = 50
 OVERSOLD_VALUE = -50
