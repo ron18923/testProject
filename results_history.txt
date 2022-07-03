@@ -460,12 +460,12 @@ Total Trades : 0
 --------------------------------------------------
 
 
-2022-06-27 18:34:20
+2022-06-30 21:25:15
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 668.24
-Net profit   : -331.76 (-33.18%)
-Max Drawdown : -39.03%
+Final Equity : 656.26
+Net profit   : -343.74 (-34.37%)
+Max Drawdown : -34.76%
 --------------- Strategy ---------------
 Capital      : 1000.00
 Final Equity : 1000.00
@@ -485,12 +485,12 @@ Total Trades : 0
 --------------------------------------------------
 
 
-2022-06-27 18:50:27
+2022-06-30 21:26:02
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 668.34
-Net profit   : -331.66 (-33.17%)
-Max Drawdown : -39.03%
+Final Equity : 656.26
+Net profit   : -343.74 (-34.37%)
+Max Drawdown : -34.76%
 --------------- Strategy ---------------
 Capital      : 1000.00
 Final Equity : 1000.00
@@ -510,15 +510,15 @@ Total Trades : 0
 --------------------------------------------------
 
 
-2022-06-27 18:51:14
+2022-06-30 21:27:51
 -------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 668.34
-Net profit   : -331.66 (-33.17%)
-Max Drawdown : -39.03%
+Capital      : 10.00
+Final Equity : 6.55
+Net profit   : -3.45 (-34.54%)
+Max Drawdown : -34.76%
 --------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
+Capital      : 10.00
+Final Equity : 10.00
 Net profit   : 0.00 (+0.00%)
 Max Drawdown : 0.00%
 Sharpe Ratio : nan
@@ -535,1228 +535,703 @@ Total Trades : 0
 --------------------------------------------------
 
 
-2022-06-27 18:51:31
+2022-06-30 21:28:42
 -------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 667.54
-Net profit   : -332.46 (-33.25%)
-Max Drawdown : -39.03%
+Capital      : 10.00
+Final Equity : 4.11
+Net profit   : -5.89 (-58.85%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
-Net profit   : 0.00 (+0.00%)
-Max Drawdown : 0.00%
-Sharpe Ratio : nan
-Sortino Ratio: nan
-Alpha        : 0.00
-Beta         : 0.00
+Capital      : 10.00
+Final Equity : 9.39
+Net profit   : -0.61 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 0
---------------------------------------------------
-
-
-2022-06-27 19:07:12
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 665.75
-Net profit   : -334.25 (-33.43%)
-Max Drawdown : -39.03%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
-Net profit   : 0.00 (+0.00%)
-Max Drawdown : 0.00%
-Sharpe Ratio : nan
-Sortino Ratio: nan
-Alpha        : 0.00
-Beta         : 0.00
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 0
---------------------------------------------------
-
-
-2022-06-27 19:07:25
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 665.75
-Net profit   : -334.25 (-33.43%)
-Max Drawdown : -39.03%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
-Net profit   : 0.00 (+0.00%)
-Max Drawdown : 0.00%
-Sharpe Ratio : nan
-Sortino Ratio: nan
-Alpha        : 0.00
-Beta         : 0.00
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 0
---------------------------------------------------
-
-
-2022-06-27 19:08:35
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 491.02
-Net profit   : -508.98 (-50.90%)
-Max Drawdown : -59.98%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 638.42
-Net profit   : -361.58 (-36.16%)
-Max Drawdown : -36.18%
-Sharpe Ratio : -4.55
-Sortino Ratio: -4.76
-Alpha        : -0.53
-Beta         : 0.36
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 8
-Sells        : 8
-Shorts       : 0
-Covers       : 0
-Total Trades : 16
---------------------------------------------------
-
-
-2022-06-27 19:09:48
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 491.02
-Net profit   : -508.98 (-50.90%)
-Max Drawdown : -59.98%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 638.42
-Net profit   : -361.58 (-36.16%)
-Max Drawdown : -36.18%
-Sharpe Ratio : -4.55
-Sortino Ratio: -4.76
-Alpha        : -0.53
-Beta         : 0.36
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 8
-Sells        : 8
-Shorts       : 0
-Covers       : 0
-Total Trades : 16
---------------------------------------------------
-
-
-2022-06-27 19:10:07
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 493.60
-Net profit   : -506.40 (-50.64%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 610.69
-Net profit   : -389.31 (-38.93%)
-Max Drawdown : -44.58%
-Sharpe Ratio : -0.96
-Sortino Ratio: -1.22
-Alpha        : -0.03
-Beta         : 0.26
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 88
-Sells        : 85
-Shorts       : 0
-Covers       : 0
-Total Trades : 173
---------------------------------------------------
-
-
-2022-06-27 19:12:18
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 493.60
-Net profit   : -506.40 (-50.64%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 610.69
-Net profit   : -389.31 (-38.93%)
-Max Drawdown : -44.58%
-Sharpe Ratio : -0.96
-Sortino Ratio: -1.22
-Alpha        : -0.03
-Beta         : 0.26
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 88
-Sells        : 85
-Shorts       : 0
-Covers       : 0
-Total Trades : 173
---------------------------------------------------
-
-
-2022-06-27 19:13:22
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 493.69
-Net profit   : -506.31 (-50.63%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 610.76
-Net profit   : -389.24 (-38.92%)
-Max Drawdown : -44.57%
-Sharpe Ratio : -0.96
-Sortino Ratio: -1.22
-Alpha        : -0.03
-Beta         : 0.26
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 88
-Sells        : 85
-Shorts       : 0
-Covers       : 0
-Total Trades : 173
---------------------------------------------------
-
-
-2022-06-27 19:23:20
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 493.26
-Net profit   : -506.74 (-50.67%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 610.42
-Net profit   : -389.58 (-38.96%)
-Max Drawdown : -44.60%
-Sharpe Ratio : -0.96
-Sortino Ratio: -1.22
-Alpha        : -0.03
-Beta         : 0.26
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 88
-Sells        : 85
-Shorts       : 0
-Covers       : 0
-Total Trades : 173
---------------------------------------------------
-
-
-2022-06-27 19:30:35
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 493.47
-Net profit   : -506.53 (-50.65%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
-Net profit   : 0.00 (+0.00%)
-Max Drawdown : 0.00%
-Sharpe Ratio : nan
-Sortino Ratio: nan
-Alpha        : 0.00
-Beta         : 0.00
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 0
---------------------------------------------------
-
-
-2022-06-27 19:32:09
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 493.92
-Net profit   : -506.08 (-50.61%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 99.34
-Net profit   : -900.66 (-90.07%)
-Max Drawdown : -90.07%
-Sharpe Ratio : -7.08
-Sortino Ratio: -6.68
-Alpha        : -0.24
-Beta         : 0.07
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 1014
-Sells        : 1014
-Shorts       : 0
-Covers       : 0
-Total Trades : 2028
---------------------------------------------------
-
-
-2022-06-27 19:39:18
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 971.43
-Net profit   : -28.57 (-2.86%)
-Max Drawdown : -3.56%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 989.75
-Net profit   : -10.25 (-1.03%)
-Max Drawdown : -1.08%
-Sharpe Ratio : -4.54
-Sortino Ratio: -4.52
-Alpha        : -0.05
-Beta         : 0.19
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 3
-Sells        : 1
+Longs        : 2
+Sells        : 2
 Shorts       : 0
 Covers       : 0
 Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-27 19:39:50
+2022-06-30 21:33:27
 -------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 972.49
-Net profit   : -27.51 (-2.75%)
-Max Drawdown : -3.56%
+Capital      : 10.00
+Final Equity : 4.12
+Net profit   : -5.88 (-58.83%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
-Net profit   : 0.00 (+0.00%)
-Max Drawdown : 0.00%
-Sharpe Ratio : nan
-Sortino Ratio: nan
-Alpha        : 0.00
-Beta         : 0.00
+Capital      : 10.00
+Final Equity : 9.39
+Net profit   : -0.61 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 0
---------------------------------------------------
-
-
-2022-06-27 19:41:12
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 972.49
-Net profit   : -27.51 (-2.75%)
-Max Drawdown : -3.56%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
-Net profit   : 0.00 (+0.00%)
-Max Drawdown : 0.00%
-Sharpe Ratio : nan
-Sortino Ratio: nan
-Alpha        : 0.00
-Beta         : 0.00
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 0
---------------------------------------------------
-
-
-2022-06-27 19:42:00
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 972.49
-Net profit   : -27.51 (-2.75%)
-Max Drawdown : -3.56%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
-Net profit   : 0.00 (+0.00%)
-Max Drawdown : 0.00%
-Sharpe Ratio : nan
-Sortino Ratio: nan
-Alpha        : 0.00
-Beta         : 0.00
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 0
---------------------------------------------------
-
-
-2022-06-27 19:44:00
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 971.96
-Net profit   : -28.04 (-2.80%)
-Max Drawdown : -3.56%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 989.91
-Net profit   : -10.09 (-1.01%)
-Max Drawdown : -1.08%
-Sharpe Ratio : -4.47
-Sortino Ratio: -4.45
-Alpha        : -0.05
-Beta         : 0.19
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 3
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 3
---------------------------------------------------
-
-
-2022-06-27 19:45:50
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 973.02
-Net profit   : -26.98 (-2.70%)
-Max Drawdown : -3.56%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 990.22
-Net profit   : -9.78 (-0.98%)
-Max Drawdown : -1.08%
-Sharpe Ratio : -4.31
-Sortino Ratio: -4.31
-Alpha        : -0.05
-Beta         : 0.19
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 3
-Sells        : 0
-Shorts       : 0
-Covers       : 0
-Total Trades : 3
---------------------------------------------------
-
-
-2022-06-27 20:48:25
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 973.73
-Net profit   : -26.27 (-2.63%)
-Max Drawdown : -3.67%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 989.15
-Net profit   : -10.85 (-1.08%)
-Max Drawdown : -1.13%
-Sharpe Ratio : -4.82
-Sortino Ratio: -4.77
-Alpha        : -0.06
-Beta         : 0.19
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 3
+Longs        : 2
 Sells        : 2
 Shorts       : 0
 Covers       : 0
-Total Trades : 5
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-27 20:49:42
+2022-06-30 21:35:36
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 1006.54
-Net profit   : 6.54 (+0.65%)
-Max Drawdown : -13.65%
+Final Equity : 411.22
+Net profit   : -588.78 (-58.88%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 980.10
-Net profit   : -19.90 (-1.99%)
-Max Drawdown : -2.51%
-Sharpe Ratio : -1.50
-Sortino Ratio: -1.73
-Alpha        : -0.02
-Beta         : 0.03
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 6
-Sells        : 4
+Longs        : 2
+Sells        : 2
 Shorts       : 0
 Covers       : 0
-Total Trades : 10
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-27 20:51:01
+2022-06-30 22:23:32
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 494.68
-Net profit   : -505.32 (-50.53%)
-Max Drawdown : -62.83%
+Final Equity : 409.90
+Net profit   : -590.10 (-59.01%)
+Max Drawdown : -59.29%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 610.41
-Net profit   : -389.59 (-38.96%)
-Max Drawdown : -44.60%
-Sharpe Ratio : -0.96
-Sortino Ratio: -1.22
-Alpha        : -0.03
-Beta         : 0.26
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 88
-Sells        : 86
+Longs        : 2
+Sells        : 2
 Shorts       : 0
 Covers       : 0
-Total Trades : 174
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-27 20:51:36
+2022-06-30 22:25:20
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 494.68
-Net profit   : -505.32 (-50.53%)
-Max Drawdown : -62.83%
+Final Equity : 409.90
+Net profit   : -590.10 (-59.01%)
+Max Drawdown : -59.29%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 660.09
-Net profit   : -339.91 (-33.99%)
-Max Drawdown : -43.59%
-Sharpe Ratio : -0.43
-Sortino Ratio: -0.61
-Alpha        : 0.00
-Beta         : 0.66
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 87
-Sells        : 83
+Longs        : 2
+Sells        : 2
 Shorts       : 0
 Covers       : 0
-Total Trades : 170
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-27 20:51:53
+2022-06-30 22:43:49
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 494.68
-Net profit   : -505.32 (-50.53%)
-Max Drawdown : -62.83%
+Final Equity : 408.61
+Net profit   : -591.39 (-59.14%)
+Max Drawdown : -59.41%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1388.75
-Net profit   : 388.75 (+38.88%)
-Max Drawdown : -14.91%
-Sharpe Ratio : 0.49
-Sortino Ratio: 0.70
-Alpha        : 0.00
-Beta         : -0.56
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 103
-Covers       : 92
-Total Trades : 195
---------------------------------------------------
-
-
-2022-06-27 20:54:50
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 494.79
-Net profit   : -505.21 (-50.52%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1388.53
-Net profit   : 388.53 (+38.85%)
-Max Drawdown : -14.91%
-Sharpe Ratio : 0.49
-Sortino Ratio: 0.70
-Alpha        : 0.00
-Beta         : -0.56
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 103
-Covers       : 92
-Total Trades : 195
---------------------------------------------------
-
-
-2022-06-27 20:55:29
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 494.79
-Net profit   : -505.21 (-50.52%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1388.53
-Net profit   : 388.53 (+38.85%)
-Max Drawdown : -14.91%
-Sharpe Ratio : 0.49
-Sortino Ratio: 0.70
-Alpha        : 0.00
-Beta         : -0.56
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 103
-Covers       : 92
-Total Trades : 195
---------------------------------------------------
-
-
-2022-06-27 20:57:37
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 493.34
-Net profit   : -506.66 (-50.67%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1000.00
-Net profit   : 0.00 (+0.00%)
-Max Drawdown : 0.00%
-Sharpe Ratio : nan
-Sortino Ratio: nan
-Alpha        : 0.00
-Beta         : 0.00
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
+Longs        : 2
+Sells        : 2
 Shorts       : 0
 Covers       : 0
-Total Trades : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-27 21:01:39
+2022-06-30 22:44:19
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 493.17
-Net profit   : -506.83 (-50.68%)
-Max Drawdown : -62.83%
+Final Equity : 408.61
+Net profit   : -591.39 (-59.14%)
+Max Drawdown : -59.41%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1388.90
-Net profit   : 388.90 (+38.89%)
-Max Drawdown : -14.91%
-Sharpe Ratio : 0.49
-Sortino Ratio: 0.70
-Alpha        : 0.00
-Beta         : -0.56
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 104
-Covers       : 92
-Total Trades : 196
---------------------------------------------------
-
-
-2022-06-28 18:34:51
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 500.68
-Net profit   : -499.32 (-49.93%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1420.45
-Net profit   : 420.45 (+42.05%)
-Max Drawdown : -14.79%
-Sharpe Ratio : 0.51
-Sortino Ratio: 0.74
-Alpha        : 0.00
-Beta         : -0.56
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 100
-Covers       : 88
-Total Trades : 188
---------------------------------------------------
-
-
-2022-06-28 19:11:39
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 499.87
-Net profit   : -500.13 (-50.01%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1423.59
-Net profit   : 423.59 (+42.36%)
-Max Drawdown : -14.79%
-Sharpe Ratio : 0.52
-Sortino Ratio: 0.75
-Alpha        : 0.00
-Beta         : -0.56
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 100
-Covers       : 88
-Total Trades : 188
---------------------------------------------------
-
-
-2022-06-28 19:11:55
--------------- Benchmark ---------------
-Capital      : 1000.00
-Final Equity : 499.87
-Net profit   : -500.13 (-50.01%)
-Max Drawdown : -62.83%
---------------- Strategy ---------------
-Capital      : 1000.00
-Final Equity : 1051.26
-Net profit   : 51.26 (+5.13%)
-Max Drawdown : -1.16%
-Sharpe Ratio : 0.68
-Sortino Ratio: 1.03
-Alpha        : 0.00
-Beta         : -0.06
-Fees paid    : 0.00
--------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 1
+Longs        : 2
+Sells        : 2
+Shorts       : 0
 Covers       : 0
-Total Trades : 1
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-28 19:12:14
+2022-06-30 22:44:48
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 499.87
-Net profit   : -500.13 (-50.01%)
-Max Drawdown : -62.83%
+Final Equity : 408.61
+Net profit   : -591.39 (-59.14%)
+Max Drawdown : -59.41%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1507.24
-Net profit   : 507.24 (+50.72%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.68
-Sortino Ratio: 1.03
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 19:33:32
+2022-06-30 22:53:13
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.65
-Net profit   : -509.35 (-50.93%)
-Max Drawdown : -62.83%
+Final Equity : 408.99
+Net profit   : -591.01 (-59.10%)
+Max Drawdown : -59.38%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1535.49
-Net profit   : 535.49 (+53.55%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 19:35:09
+2022-06-30 22:53:35
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.17
-Net profit   : -509.83 (-50.98%)
-Max Drawdown : -62.83%
+Final Equity : 408.03
+Net profit   : -591.97 (-59.20%)
+Max Drawdown : -59.47%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1536.39
-Net profit   : 536.39 (+53.64%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 19:36:15
+2022-06-30 22:55:35
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.17
-Net profit   : -509.83 (-50.98%)
-Max Drawdown : -62.83%
+Final Equity : 408.03
+Net profit   : -591.97 (-59.20%)
+Max Drawdown : -59.47%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1536.39
-Net profit   : 536.39 (+53.64%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 19:44:35
+2022-06-30 22:56:37
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.71
-Net profit   : -509.29 (-50.93%)
-Max Drawdown : -62.83%
+Final Equity : 407.93
+Net profit   : -592.07 (-59.21%)
+Max Drawdown : -59.48%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1535.38
-Net profit   : 535.38 (+53.54%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 19:45:12
+2022-06-30 22:57:09
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 491.03
-Net profit   : -508.97 (-50.90%)
-Max Drawdown : -62.83%
+Final Equity : 407.93
+Net profit   : -592.07 (-59.21%)
+Max Drawdown : -59.48%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1534.80
-Net profit   : 534.80 (+53.48%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 19:46:50
+2022-07-01 15:12:05
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 491.03
-Net profit   : -508.97 (-50.90%)
-Max Drawdown : -62.83%
+Final Equity : 418.78
+Net profit   : -581.22 (-58.12%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1534.80
-Net profit   : 534.80 (+53.48%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 20:16:54
+2022-07-01 15:14:23
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 486.25
-Net profit   : -513.75 (-51.38%)
-Max Drawdown : -62.83%
+Final Equity : 419.12
+Net profit   : -580.88 (-58.09%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1537.89
-Net profit   : 537.89 (+53.79%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.08
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 20:17:36
+2022-07-01 15:14:44
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 486.25
-Net profit   : -513.75 (-51.38%)
-Max Drawdown : -62.83%
+Final Equity : 419.12
+Net profit   : -580.88 (-58.09%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1537.89
-Net profit   : 537.89 (+53.79%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.08
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 20:25:59
+2022-07-01 15:15:00
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 486.86
-Net profit   : -513.14 (-51.31%)
-Max Drawdown : -62.83%
+Final Equity : 419.12
+Net profit   : -580.88 (-58.09%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1536.76
-Net profit   : 536.76 (+53.68%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.08
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 20:27:25
+2022-07-01 17:23:34
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 486.86
-Net profit   : -513.14 (-51.31%)
-Max Drawdown : -62.83%
+Final Equity : 422.73
+Net profit   : -577.27 (-57.73%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1536.76
-Net profit   : 536.76 (+53.68%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.08
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 20:27:49
+2022-07-01 17:27:02
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 486.86
-Net profit   : -513.14 (-51.31%)
-Max Drawdown : -62.83%
+Final Equity : 422.27
+Net profit   : -577.73 (-57.77%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1536.76
-Net profit   : 536.76 (+53.68%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.08
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 20:28:38
+2022-07-01 17:27:53
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 486.86
-Net profit   : -513.14 (-51.31%)
-Max Drawdown : -62.83%
+Final Equity : 422.27
+Net profit   : -577.73 (-57.77%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1536.76
-Net profit   : 536.76 (+53.68%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.08
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 20:36:02
+2022-07-01 17:28:20
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 486.90
-Net profit   : -513.10 (-51.31%)
-Max Drawdown : -62.83%
+Final Equity : 422.27
+Net profit   : -577.73 (-57.77%)
+Max Drawdown : -59.27%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1536.69
-Net profit   : 536.69 (+53.67%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.08
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 938.53
+Net profit   : -61.47 (-6.15%)
+Max Drawdown : -6.52%
+Sharpe Ratio : -3.32
+Sortino Ratio: -3.29
+Alpha        : -0.09
+Beta         : 0.04
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 2
+Sells        : 2
+Shorts       : 0
+Covers       : 0
+Total Trades : 4
 --------------------------------------------------
 
 
-2022-06-29 21:00:27
+2022-07-01 17:30:00
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 489.62
-Net profit   : -510.38 (-51.04%)
-Max Drawdown : -62.83%
+Final Equity : 409.00
+Net profit   : -591.00 (-59.10%)
+Max Drawdown : -59.98%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1534.16
-Net profit   : 534.16 (+53.42%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 464.00
+Net profit   : -536.00 (-53.60%)
+Max Drawdown : -55.87%
+Sharpe Ratio : -2.66
+Sortino Ratio: -3.01
+Alpha        : -0.41
+Beta         : 0.55
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 12
+Sells        : 10
+Shorts       : 0
+Covers       : 0
+Total Trades : 22
 --------------------------------------------------
 
 
-2022-06-29 21:01:33
+2022-07-02 10:49:43
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.23
-Net profit   : -509.77 (-50.98%)
-Max Drawdown : -62.83%
+Final Equity : 412.56
+Net profit   : -587.44 (-58.74%)
+Max Drawdown : -59.98%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1533.04
-Net profit   : 533.04 (+53.30%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 462.97
+Net profit   : -537.03 (-53.70%)
+Max Drawdown : -55.97%
+Sharpe Ratio : -2.67
+Sortino Ratio: -3.02
+Alpha        : -0.42
+Beta         : 0.55
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 12
+Sells        : 11
+Shorts       : 0
+Covers       : 0
+Total Trades : 23
 --------------------------------------------------
 
 
-2022-06-29 21:08:03
+2022-07-02 10:50:05
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.73
-Net profit   : -509.27 (-50.93%)
-Max Drawdown : -62.83%
+Final Equity : 412.56
+Net profit   : -587.44 (-58.74%)
+Max Drawdown : -59.98%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1532.11
-Net profit   : 532.11 (+53.21%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 462.97
+Net profit   : -537.03 (-53.70%)
+Max Drawdown : -55.97%
+Sharpe Ratio : -2.67
+Sortino Ratio: -3.02
+Alpha        : -0.42
+Beta         : 0.55
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 12
+Sells        : 11
+Shorts       : 0
+Covers       : 0
+Total Trades : 23
 --------------------------------------------------
 
 
-2022-06-29 21:08:19
+2022-07-02 10:51:06
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.73
-Net profit   : -509.27 (-50.93%)
-Max Drawdown : -62.83%
+Final Equity : 412.56
+Net profit   : -587.44 (-58.74%)
+Max Drawdown : -59.98%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1532.11
-Net profit   : 532.11 (+53.21%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 462.97
+Net profit   : -537.03 (-53.70%)
+Max Drawdown : -55.97%
+Sharpe Ratio : -2.67
+Sortino Ratio: -3.02
+Alpha        : -0.42
+Beta         : 0.55
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 12
+Sells        : 11
+Shorts       : 0
+Covers       : 0
+Total Trades : 23
 --------------------------------------------------
 
 
-2022-06-29 21:12:21
+2022-07-02 10:51:50
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.78
-Net profit   : -509.22 (-50.92%)
-Max Drawdown : -62.83%
+Final Equity : 411.91
+Net profit   : -588.09 (-58.81%)
+Max Drawdown : -59.98%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1532.02
-Net profit   : 532.02 (+53.20%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 462.80
+Net profit   : -537.20 (-53.72%)
+Max Drawdown : -55.99%
+Sharpe Ratio : -2.67
+Sortino Ratio: -3.02
+Alpha        : -0.42
+Beta         : 0.55
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 12
+Sells        : 11
+Shorts       : 0
+Covers       : 0
+Total Trades : 23
 --------------------------------------------------
 
 
-2022-06-29 21:14:19
+2022-07-02 10:52:09
 -------------- Benchmark ---------------
 Capital      : 1000.00
-Final Equity : 490.78
-Net profit   : -509.22 (-50.92%)
-Max Drawdown : -62.83%
+Final Equity : 411.91
+Net profit   : -588.09 (-58.81%)
+Max Drawdown : -59.98%
 --------------- Strategy ---------------
 Capital      : 1000.00
-Final Equity : 1532.02
-Net profit   : 532.02 (+53.20%)
-Max Drawdown : -9.32%
-Sharpe Ratio : 0.71
-Sortino Ratio: 1.07
-Alpha        : 0.01
-Beta         : -0.51
+Final Equity : 462.80
+Net profit   : -537.20 (-53.72%)
+Max Drawdown : -55.99%
+Sharpe Ratio : -2.67
+Sortino Ratio: -3.02
+Alpha        : -0.42
+Beta         : 0.55
 Fees paid    : 0.00
 -------------- Statistics --------------
-Longs        : 0
-Sells        : 0
-Shorts       : 21
-Covers       : 10
-Total Trades : 31
+Longs        : 12
+Sells        : 11
+Shorts       : 0
+Covers       : 0
+Total Trades : 23
+--------------------------------------------------
+
+
+2022-07-02 10:54:10
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 411.91
+Net profit   : -588.09 (-58.81%)
+Max Drawdown : -59.98%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 462.80
+Net profit   : -537.20 (-53.72%)
+Max Drawdown : -55.99%
+Sharpe Ratio : -2.67
+Sortino Ratio: -3.02
+Alpha        : -0.42
+Beta         : 0.55
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 12
+Sells        : 11
+Shorts       : 0
+Covers       : 0
+Total Trades : 23
 --------------------------------------------------
 
 
