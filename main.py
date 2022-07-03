@@ -4,6 +4,8 @@ from gemini.helpers import poloniex, analyze
 
 # TODO - optimize params
 
+OPEN_TRADE = False
+
 CMO_PERIOD = 9
 PAIR = "BTC_USDT"
 PERIOD = 900
@@ -41,6 +43,7 @@ def cmo_logic(data):
 
 
 def cmo_trading_strategy(gemini: Gemini, data):
+
     if len(data) >= CMO_PERIOD:
         cmo = cmo_logic(data)
         assert -100 <= cmo <= 100, "CMO value can't be less than a -100 and more than a 100"
@@ -49,12 +52,13 @@ def cmo_trading_strategy(gemini: Gemini, data):
             gemini.account.close_position(position=gemini.account.positions[0],
                                           percent=1,
                                           price=data.iloc[-1]['low'])
-        elif cmo > OVERBOUGHT_VALUE:
-            gemini.account.enter_position(type_="Long",
-                                          entry_capital=params['capital_base']*0.1,
-                                          entry_price=data.iloc[-1]['high'])
-        # else:
-        #     raise Exception
+            time_expression = len(data)
+            OPEN_TRADE = True
+
+        # elif cmo > OVERBOUGHT_VALUE:
+        #     gemini.account.enter_position(type_="Long",
+        #                                   entry_capital=params['capital_base']*0.1,
+        #                                   entry_price=data.iloc[-1]['high'])
 
 
 if __name__ == '__main__':
