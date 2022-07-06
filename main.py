@@ -6,6 +6,7 @@ from gemini.helpers import poloniex, analyze
 
 OPEN_TRADE = False
 TIME_EXPRESSION = 0
+IS_SMA_BELOW = False
 
 CMO_PERIOD = 9
 SMA_PERIOD = 25
@@ -22,7 +23,7 @@ PERIOD ALLOWED VALUES:
     * 14400 - 4H
     * 86400 - 1D
 """
-PERIOD = 1800
+PERIOD = 300
 
 
 OVERBOUGHT_VALUE = 50
@@ -38,7 +39,7 @@ DATA FREQUENCY ALLOWED VALUES:
 """
 params = {
     'capital_base': 1000,
-    'data_frequency': '30T',
+    'data_frequency': '5T',
     'fees': {
         'open_fee': 0.0001,
         'close_fee': 0.0001
@@ -46,8 +47,8 @@ params = {
 }
 
 
-def cmo_logic(data):
-    first_day = len(data) - CMO_PERIOD
+def cmo_logic(data, cmo_period):
+    first_day = len(data) - cmo_period
     last_day = len(data)
     higher_close_price = 0
     lower_close_price = 0
@@ -63,45 +64,51 @@ def cmo_logic(data):
     return cmo
 
 
-def sma_logic(data):
+def sma_logic(data, sma_period):
     # TODO make it more accurate to what shows on 'poloniex.com'
-    first_day = len(data) - SMA_PERIOD
+    first_day = len(data) - sma_period
     last_day = len(data)
     averages_sum = 0
 
     for ticker in range(first_day, last_day):
         average = data["high"][ticker] - (data["high"][ticker] - data["low"][ticker]) / 2.0
         averages_sum += average
-    return averages_sum / SMA_PERIOD
+    return averages_sum / sma_period
 
 
-def cmo_trading_strategy(gemini: Gemini, data):
-    global OPEN_TRADE
-    global TIME_EXPRESSION
+def trading_strategy(gemini: Gemini, data):
+    global IS_SMA_BELOW
 
-    if len(data) >= CMO_PERIOD and (not OPEN_TRADE):
-        cmo = cmo_logic(data)
-        assert -100 <= cmo <= 100, "CMO value can't be less than a -100 and more than a 100"
-
-        if cmo < OVERSOLD_VALUE:
-            gemini.account.enter_position(type_="Short",
-                                          entry_capital=params['capital_base'] * 0.1,
-                                          entry_price=data.iloc[-1]['high'])
-            TIME_EXPRESSION = len(data)
-            OPEN_TRADE = True
-        # elif cmo > OVERBOUGHT_VALUE:
-
-    elif TIME_EXPRESSION + 1 <= len(data):
-        gemini.account.close_position(position=gemini.account.positions[0],
-                                      percent=1,
-                                      price=data.iloc[-1]['low'])
-        OPEN_TRADE = False
+    if sma_logic(data, SMA_PERIOD) < data["close"][len(data)-1] and not IS_SMA_BELOW:
+        IS_SMA_BELOW = True
+        return
 
 
 if __name__ == '__main__':
     data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    backtesting_engine = Gemini(logic=cmo_trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
+    trading_strategy(gemini, data_df)
+    backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
     backtesting_engine.run(data=data_df)
 
-    print(data_df)
+# def cmo_trading_strategy(gemini: Gemini, data):
+#     global OPEN_TRADE
+#     global TIME_EXPRESSION
+#
+#     if len(data) >= CMO_PERIOD and (not OPEN_TRADE):
+#         cmo = cmo_logic(data, CMO_PERIOD)
+#         assert -100 <= cmo <= 100, "CMO value can't be less than a -100 and more than a 100"
+#
+#         if cmo < OVERSOLD_VALUE:
+#             gemini.account.enter_position(type_="Short",
+#                                           entry_capital=params['capital_base'] * 0.1,
+#                                           entry_price=data.iloc[-1]['high'])
+#             TIME_EXPRESSION = len(data)
+#             OPEN_TRADE = True
+#         # elif cmo > OVERBOUGHT_VALUE:
+#
+#     elif TIME_EXPRESSION + 1 <= len(data):
+#         gemini.account.close_position(position=gemini.account.positions[0],
+#                                       percent=1,
+#                                       price=data.iloc[-1]['low'])
+#         OPEN_TRADE = False
