@@ -1,4 +1,5 @@
 import gemini
+from gemini.gemini_core.exchange import OpenedTrade
 from gemini.gemini_core.gemini_master import Gemini
 from gemini.helpers import poloniex, analyze
 
@@ -77,11 +78,24 @@ def sma_logic(data, sma_period):
 
 
 def trading_strategy(gemini: Gemini, data):
-    global IS_SMA_BELOW
+    pass
+    # global IS_SMA_BELOW
 
-    if sma_logic(data, SMA_PERIOD) < data["close"][len(data)-1] and not IS_SMA_BELOW:
-        IS_SMA_BELOW = True
-        return
+    # if sma_logic(data, SMA_PERIOD) < data["close"][len(data)-1] and not IS_SMA_BELOW:
+    #     # IS_SMA_BELOW = True
+    #     print("is true")
+    #     return
+
+    # if sma_logic(data, SMA_PERIOD) > data["close"][len(data)-1] and len(gemini.account.opened_trades) == 0:
+    #     gemini.account.enter_position(type_="Short",
+    #                                   entry_capital=params['capital_base'] * 0.1,
+    #                                   entry_price=data.iloc[-1]['high'])
+    #     return
+    #
+    # if len(gemini.account.positions) > 0 and gemini.account.positions[0].__getattribute__(name="entry_price") < data["close"][len(data)-1]:
+    #     gemini.account.close_position(position=gemini.account.positions[0],
+    #                                   percent=1,
+    #                                   price=data.iloc[-1]['low'])
 
 
 if __name__ == '__main__':
