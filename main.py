@@ -8,11 +8,12 @@ from gemini.helpers import poloniex, analyze
 OPEN_TRADE = False
 TIME_EXPRESSION = 0
 IS_SMA_BELOW = False
+IS_SMA_ABOVE = False
 
 CMO_PERIOD = 9
 SMA_PERIOD = 25
 PAIR = "BTC_USDT"
-DAYS_HISTORY = 75
+DAYS_HISTORY = 3
 
 """
 PERIOD ALLOWED VALUES:
@@ -78,32 +79,60 @@ def sma_logic(data, sma_period):
 
 
 def trading_strategy(gemini: Gemini, data):
-    pass
-    # global IS_SMA_BELOW
+    global IS_SMA_BELOW, IS_SMA_ABOVE
+    if len(data) < SMA_PERIOD:
+        return
 
     # if sma_logic(data, SMA_PERIOD) < data["close"][len(data)-1] and not IS_SMA_BELOW:
-    #     # IS_SMA_BELOW = True
-    #     print("is true")
+    #     IS_SMA_BELOW = True
     #     return
-
-    # if sma_logic(data, SMA_PERIOD) > data["close"][len(data)-1] and len(gemini.account.opened_trades) == 0:
+    #
+    # if sma_logic(data, SMA_PERIOD) > data["close"][len(data)-1] and len(gemini.account.positions) == 0:
     #     gemini.account.enter_position(type_="Short",
     #                                   entry_capital=params['capital_base'] * 0.1,
     #                                   entry_price=data.iloc[-1]['high'])
     #     return
     #
-    # if len(gemini.account.positions) > 0 and gemini.account.positions[0].__getattribute__(name="entry_price") < data["close"][len(data)-1]:
+    # if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price > data["close"][len(data)-1]*1.01:
+    #     gemini.account.close_position(position=gemini.account.positions[0],
+    #                                   percent=1,
+    #                                   price=data.iloc[-1]['low'])
+    #
+    # if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price < data["close"][len(data)-1]*0.99:
     #     gemini.account.close_position(position=gemini.account.positions[0],
     #                                   percent=1,
     #                                   price=data.iloc[-1]['low'])
 
+    if sma_logic(data, SMA_PERIOD) > data["close"][len(data)-1] and not IS_SMA_ABOVE:
+        IS_SMA_ABOVE = True
+        return
+
+    if sma_logic(data, SMA_PERIOD) < data["close"][len(data)-1] and len(gemini.account.positions) == 0:
+        gemini.account.enter_position(type_="Long",
+                                      entry_capital=params['capital_base'] * 0.1,
+                                      entry_price=data.iloc[-1]['high'])
+        return
+
+    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price*1.01 < data["close"][len(data)-1]:
+        gemini.account.close_position(position=gemini.account.positions[0],
+                                      percent=1,
+                                      price=data.iloc[-1]['low'])
+
+    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price*0.99 > data["close"][len(data)-1]:
+        gemini.account.close_position(position=gemini.account.positions[0],
+                                      percent=1,
+                                      price=data.iloc[-1]['low'])
+
 
 if __name__ == '__main__':
+
     data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    trading_strategy(gemini, data_df)
-    backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
-    backtesting_engine.run(data=data_df)
+    for period in range(10, 500, 10):
+        SMA_PERIOD = period
+        backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
+        backtesting_engine.run(data=data_df)
+
 
 # def cmo_trading_strategy(gemini: Gemini, data):
 #     global OPEN_TRADE
