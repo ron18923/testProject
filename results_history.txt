@@ -4310,3 +4310,253 @@ Total Trades : 39
 --------------------------------------------------
 
 
+2022-07-08 23:58:52
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1068.08
+Net profit   : 68.08 (+6.81%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 952.17
+Net profit   : -47.83 (-4.78%)
+Max Drawdown : -4.78%
+Sharpe Ratio : -3.72
+Sortino Ratio: -4.37
+Alpha        : -0.02
+Beta         : 0.06
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 182
+Sells        : 181
+Shorts       : 0
+Covers       : 0
+Total Trades : 363
+--------------------------------------------------
+
+
+2022-07-08 23:58:56
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1068.08
+Net profit   : 68.08 (+6.81%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 946.28
+Net profit   : -53.72 (-5.37%)
+Max Drawdown : -5.37%
+Sharpe Ratio : -4.08
+Sortino Ratio: -4.72
+Alpha        : -0.02
+Beta         : 0.06
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 202
+Sells        : 201
+Shorts       : 0
+Covers       : 0
+Total Trades : 403
+--------------------------------------------------
+
+
+2022-07-08 23:58:58
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1068.08
+Net profit   : 68.08 (+6.81%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 947.50
+Net profit   : -52.50 (-5.25%)
+Max Drawdown : -5.25%
+Sharpe Ratio : -4.10
+Sortino Ratio: -4.79
+Alpha        : -0.02
+Beta         : 0.06
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 207
+Sells        : 206
+Shorts       : 0
+Covers       : 0
+Total Trades : 413
+--------------------------------------------------
+
+
+2022-07-08 23:59:01
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1068.08
+Net profit   : 68.08 (+6.81%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 948.51
+Net profit   : -51.49 (-5.15%)
+Max Drawdown : -5.15%
+Sharpe Ratio : -4.07
+Sortino Ratio: -4.77
+Alpha        : -0.02
+Beta         : 0.05
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 204
+Sells        : 203
+Shorts       : 0
+Covers       : 0
+Total Trades : 407
+--------------------------------------------------
+
+
+2022-07-08 23:59:03
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1068.08
+Net profit   : 68.08 (+6.81%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 946.83
+Net profit   : -53.17 (-5.32%)
+Max Drawdown : -5.33%
+Sharpe Ratio : -4.20
+Sortino Ratio: -4.90
+Alpha        : -0.02
+Beta         : 0.06
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 212
+Sells        : 211
+Shorts       : 0
+Covers       : 0
+Total Trades : 423
+--------------------------------------------------
+
+
+2022-07-08 23:59:07
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1068.08
+Net profit   : 68.08 (+6.81%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 948.90
+Net profit   : -51.10 (-5.11%)
+Max Drawdown : -5.11%
+Sharpe Ratio : -4.05
+Sortino Ratio: -4.75
+Alpha        : -0.02
+Beta         : 0.05
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 202
+Sells        : 201
+Shorts       : 0
+Covers       : 0
+Total Trades : 403
+--------------------------------------------------
+
+
+2022-07-08 23:59:11
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1068.08
+Net profit   : 68.08 (+6.81%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 951.24
+Net profit   : -48.76 (-4.88%)
+Max Drawdown : -4.88%
+Sharpe Ratio : -3.91
+Sortino Ratio: -4.61
+Alpha        : -0.02
+Beta         : 0.05
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 199
+Sells        : 198
+Shorts       : 0
+Covers       : 0
+Total Trades : 397
+--------------------------------------------------
+
+
+2022-07-08 23:59:16
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1068.08
+Net profit   : 68.08 (+6.81%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 952.06
+Net profit   : -47.94 (-4.79%)
+Max Drawdown : -4.79%
+Sharpe Ratio : -3.80
+Sortino Ratio: -4.47
+Alpha        : -0.02
+Beta         : 0.05
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 192
+Sells        : 191
+Shorts       : 0
+Covers       : 0
+Total Trades : 383
+--------------------------------------------------
+
+
+2022-07-09 00:01:00
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1067.02
+Net profit   : 67.02 (+6.70%)
+Max Drawdown : -5.14%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 1046.70
+Net profit   : 46.70 (+4.67%)
+Max Drawdown : -0.32%
+Sharpe Ratio : 3.78
+Sortino Ratio: 6.46
+Alpha        : 0.01
+Beta         : -0.05
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 0
+Sells        : 0
+Shorts       : 191
+Covers       : 190
+Total Trades : 381
+--------------------------------------------------
+
+
+2022-07-09 00:01:44
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 1075.63
+Net profit   : 75.63 (+7.56%)
+Max Drawdown : -8.54%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 1145.80
+Net profit   : 145.80 (+14.58%)
+Max Drawdown : -0.29%
+Sharpe Ratio : 4.13
+Sortino Ratio: 8.00
+Alpha        : 0.01
+Beta         : -0.04
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 0
+Sells        : 0
+Shorts       : 542
+Covers       : 541
+Total Trades : 1083
+--------------------------------------------------
+
+

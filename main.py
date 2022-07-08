@@ -11,9 +11,9 @@ IS_SMA_BELOW = False
 IS_SMA_ABOVE = False
 
 CMO_PERIOD = 9
-SMA_PERIOD = 25
+SMA_PERIOD = 200
 PAIR = "BTC_USDT"
-DAYS_HISTORY = 3
+DAYS_HISTORY = 10
 
 """
 PERIOD ALLOWED VALUES:
@@ -108,17 +108,17 @@ def trading_strategy(gemini: Gemini, data):
         return
 
     if sma_logic(data, SMA_PERIOD) < data["close"][len(data)-1] and len(gemini.account.positions) == 0:
-        gemini.account.enter_position(type_="Long",
+        gemini.account.enter_position(type_="Short",
                                       entry_capital=params['capital_base'] * 0.1,
                                       entry_price=data.iloc[-1]['high'])
         return
 
-    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price*1.01 < data["close"][len(data)-1]:
+    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price*1.001 < data["close"][len(data)-1]:
         gemini.account.close_position(position=gemini.account.positions[0],
                                       percent=1,
                                       price=data.iloc[-1]['low'])
 
-    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price*0.99 > data["close"][len(data)-1]:
+    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price*0.999 > data["close"][len(data)-1]:
         gemini.account.close_position(position=gemini.account.positions[0],
                                       percent=1,
                                       price=data.iloc[-1]['low'])
@@ -128,10 +128,8 @@ if __name__ == '__main__':
 
     data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    for period in range(10, 500, 10):
-        SMA_PERIOD = period
-        backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
-        backtesting_engine.run(data=data_df)
+    backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
+    backtesting_engine.run(data=data_df)
 
 
 # def cmo_trading_strategy(gemini: Gemini, data):
