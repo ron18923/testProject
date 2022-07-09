@@ -13,7 +13,7 @@ IS_SMA_ABOVE = False
 CMO_PERIOD = 9
 SMA_PERIOD = 200
 PAIR = "BTC_USDT"
-DAYS_HISTORY = 10
+DAYS_HISTORY = 2
 
 """
 PERIOD ALLOWED VALUES:
@@ -26,7 +26,6 @@ PERIOD ALLOWED VALUES:
     * 86400 - 1D
 """
 PERIOD = 300
-
 
 OVERBOUGHT_VALUE = 50
 OVERSOLD_VALUE = -50
@@ -103,34 +102,40 @@ def trading_strategy(gemini: Gemini, data):
     #                                   percent=1,
     #                                   price=data.iloc[-1]['low'])
 
-    if sma_logic(data, SMA_PERIOD) > data["close"][len(data)-1] and not IS_SMA_ABOVE:
+    if sma_logic(data, SMA_PERIOD) > data["close"][len(data) - 1] and not IS_SMA_ABOVE:
         IS_SMA_ABOVE = True
         return
 
-    if sma_logic(data, SMA_PERIOD) < data["close"][len(data)-1] and len(gemini.account.positions) == 0:
+    if not IS_SMA_ABOVE:
+        return
+
+    if sma_logic(data, SMA_PERIOD) < data["close"][len(data) - 1] and len(gemini.account.positions) == 0:
         gemini.account.enter_position(type_="Short",
                                       entry_capital=params['capital_base'] * 0.1,
                                       entry_price=data.iloc[-1]['high'])
         return
 
-    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price*1.001 < data["close"][len(data)-1]:
+    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price * 1.001 < data["close"][
+        len(data) - 1]:
         gemini.account.close_position(position=gemini.account.positions[0],
                                       percent=1,
                                       price=data.iloc[-1]['low'])
+        IS_SMA_ABOVE = False  # setting as false, although it may be still above,
+        # so we won't open a position the next tick(waiting until the graph goes down and up again compared to the SMA).
 
-    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price*0.999 > data["close"][len(data)-1]:
+    if len(gemini.account.positions) > 0 and gemini.account.positions[0].entry_price * 0.999 > data["close"][len(data) - 1]:
         gemini.account.close_position(position=gemini.account.positions[0],
                                       percent=1,
                                       price=data.iloc[-1]['low'])
+        IS_SMA_ABOVE = False  # setting as false, although it may be still above,
+        # so we won't open a position the next tick(waiting until the graph goes down and up again compared to the SMA).
 
 
 if __name__ == '__main__':
-
     data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
     backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
     backtesting_engine.run(data=data_df)
-
 
 # def cmo_trading_strategy(gemini: Gemini, data):
 #     global OPEN_TRADE
