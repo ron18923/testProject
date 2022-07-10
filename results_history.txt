@@ -4710,3 +4710,53 @@ Total Trades : 24
 --------------------------------------------------
 
 
+2022-07-10 22:48:42
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 964.36
+Net profit   : -35.64 (-3.56%)
+Max Drawdown : -4.76%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 1000.00
+Net profit   : 0.00 (+0.00%)
+Max Drawdown : 0.00%
+Sharpe Ratio : nan
+Sortino Ratio: nan
+Alpha        : 0.00
+Beta         : 0.00
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 0
+Sells        : 0
+Shorts       : 0
+Covers       : 0
+Total Trades : 0
+--------------------------------------------------
+
+
+2022-07-10 23:11:05
+-------------- Benchmark ---------------
+Capital      : 1000.00
+Final Equity : 965.39
+Net profit   : -34.61 (-3.46%)
+Max Drawdown : -4.76%
+--------------- Strategy ---------------
+Capital      : 1000.00
+Final Equity : 1000.00
+Net profit   : 0.00 (+0.00%)
+Max Drawdown : 0.00%
+Sharpe Ratio : nan
+Sortino Ratio: nan
+Alpha        : 0.00
+Beta         : 0.00
+Fees paid    : 0.00
+-------------- Statistics --------------
+Longs        : 0
+Sells        : 0
+Shorts       : 0
+Covers       : 0
+Total Trades : 0
+--------------------------------------------------
+
+
