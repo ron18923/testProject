@@ -1,3 +1,4 @@
+import logging
 import math
 
 import gemini
@@ -8,7 +9,7 @@ from gemini.helpers import poloniex, analyze
 # TODO - optimize params
 
 PAIR = "BTC_USDT"
-DAYS_HISTORY = 1
+DAYS_HISTORY = 100
 
 """
 PERIOD ALLOWED VALUES:
@@ -70,24 +71,73 @@ def similarity_between_two_candles(first_candle, second_candle):
     high_list.sort(reverse=True)
     low_list.sort(reverse=True)
 
-    open_diff_pow = (1-(open_list.__getitem__(len(open_list)-1)/open_list.__getitem__(0))) ** 2
-    close_diff_pow = (1-(close_list.__getitem__(len(close_list)-1)/close_list.__getitem__(0))) ** 2
-    high_diff_pow = (1-(high_list.__getitem__(len(high_list)-1)/high_list.__getitem__(0))) ** 2
-    low_diff_pow = (1-(low_list.__getitem__(len(low_list)-1)/low_list.__getitem__(0))) ** 2
+    open_diff_pow = (1 - (open_list.__getitem__(len(open_list) - 1) / open_list.__getitem__(0))) ** 2
+    close_diff_pow = (1 - (close_list.__getitem__(len(close_list) - 1) / close_list.__getitem__(0))) ** 2
+    high_diff_pow = (1 - (high_list.__getitem__(len(high_list) - 1) / high_list.__getitem__(0))) ** 2
+    low_diff_pow = (1 - (low_list.__getitem__(len(low_list) - 1) / low_list.__getitem__(0))) ** 2
 
-    return 1-math.sqrt((open_diff_pow + close_diff_pow + high_diff_pow + low_diff_pow) / 4)
+    return 1 - math.sqrt((open_diff_pow + close_diff_pow + high_diff_pow + low_diff_pow) / 4)
+    # Todo check if dividing in integer makes the float number into integer
+
+
+# def similarity_between_four_candles(list_candles):
+#     if len(list_candles) != 4:
+#         logging.warning("list should include 4 candles!")
+#         return
+#
+#     open_list = []
+#     close_list = []
+#     high_list = []
+#     low_list = []
+#     # based on: https://developers.google.com/machine-learning/clustering/similarity/manual-similarity
+#     for candle in list_candles:
+#         open_list.append(candle["open"])
+#         close_list.append(candle["close"])
+#         high_list.append(candle["high"])
+#         low_list.append(candle["low"])
+#
+#     open_list.sort(reverse=True)
+#     close_list.sort(reverse=True)
+#     high_list.sort(reverse=True)
+#     low_list.sort(reverse=True)
+
+def similarity_two_sections(first_section, second_section):
+    similarities_list = []
+    percentages_sum = 0
+
+    if len(first_section) != len(second_section):
+        logging.warning("Sections length must match!")
+        return
+
+    for index in range(len(first_section)):
+        first_section_candle = first_section.iloc[index]
+        second_section_candle = second_section.iloc[index]
+        similarities_list.append(similarity_between_two_candles(first_section_candle, second_section_candle))
+
+    for similarity in similarities_list:
+        percentages_sum += similarity
+    final_percentage = percentages_sum / len(similarities_list)
+
+    return final_percentage
 
 
 def trading_strategy(gemini: Gemini, data):
-    last_candle = data_df.iloc[len(data) - 1]
-    second_last_candle = data_df.iloc[len(data) - 2]
+    last_candle = data.iloc[len(data) - 1]
+    second_last_candle = data.iloc[len(data) - 2]
 
     similarity_between_two_candles(last_candle, second_last_candle)
-    pass
 
 
 if __name__ == '__main__':
     data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
-    backtesting_engine.run(data=data_df)
+    # last_candle = data_df.iloc[len(data_df) - 1]
+    # second_last_candle = data_df.iloc[len(data_df) - 200]
+    #
+    # similarity_between_two_candles(last_candle, second_last_candle)
+
+    first_section = data_df.iloc[0:10]
+    second_section = data_df.iloc[28000:28010]
+    similarity_two_sections(first_section, second_section)
+    # backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
+    # backtesting_engine.run(data=data_df)
