@@ -50,6 +50,57 @@ def order_by_size(num1, num2):
     return list
 
 
+# def similarity_between_two_candles(first_candle, second_candle):
+#     open_list = []
+#     close_list = []
+#     high_list = []
+#     low_list = []
+#     # based on: https://developers.google.com/machine-learning/clustering/similarity/manual-similarity
+#     open_list.append(first_candle["open"])
+#     close_list.append(first_candle["close"])
+#     high_list.append(first_candle["high"])
+#     low_list.append(first_candle["low"])
+#
+#     open_list.append(second_candle["open"])
+#     close_list.append(second_candle["close"])
+#     high_list.append(second_candle["high"])
+#     low_list.append(second_candle["low"])
+#
+#     open_list.sort(reverse=True)
+#     close_list.sort(reverse=True)
+#     high_list.sort(reverse=True)
+#     low_list.sort(reverse=True)
+#
+#     open_diff_pow = (1 - (open_list.__getitem__(len(open_list) - 1) / open_list.__getitem__(0))) ** 2
+#     close_diff_pow = (1 - (close_list.__getitem__(len(close_list) - 1) / close_list.__getitem__(0))) ** 2
+#     high_diff_pow = (1 - (high_list.__getitem__(len(high_list) - 1) / high_list.__getitem__(0))) ** 2
+#     low_diff_pow = (1 - (low_list.__getitem__(len(low_list) - 1) / low_list.__getitem__(0))) ** 2
+#
+#     return 1 - math.sqrt((open_diff_pow + close_diff_pow + high_diff_pow + low_diff_pow) / 4)
+#     # Todo check if dividing in integer makes the float number into integer
+
+
+# def similarity_between_four_candles(list_candles):
+#     if len(list_candles) != 4:
+#         logging.warning("list should include 4 candles!")
+#         return
+#
+#     open_list = []
+#     close_list = []
+#     high_list = []
+#     low_list = []
+#     # based on: https://developers.google.com/machine-learning/clustering/similarity/manual-similarity
+#     for candle in list_candles:
+#         open_list.append(candle["open"])
+#         close_list.append(candle["close"])
+#         high_list.append(candle["high"])
+#         low_list.append(candle["low"])
+#
+#     open_list.sort(reverse=True)
+#     close_list.sort(reverse=True)
+#     high_list.sort(reverse=True)
+#     low_list.sort(reverse=True)
+
 def similarity_between_two_candles(first_candle, second_candle):
     open_list = []
     close_list = []
@@ -78,28 +129,6 @@ def similarity_between_two_candles(first_candle, second_candle):
 
     return 1 - math.sqrt((open_diff_pow + close_diff_pow + high_diff_pow + low_diff_pow) / 4)
     # Todo check if dividing in integer makes the float number into integer
-
-
-# def similarity_between_four_candles(list_candles):
-#     if len(list_candles) != 4:
-#         logging.warning("list should include 4 candles!")
-#         return
-#
-#     open_list = []
-#     close_list = []
-#     high_list = []
-#     low_list = []
-#     # based on: https://developers.google.com/machine-learning/clustering/similarity/manual-similarity
-#     for candle in list_candles:
-#         open_list.append(candle["open"])
-#         close_list.append(candle["close"])
-#         high_list.append(candle["high"])
-#         low_list.append(candle["low"])
-#
-#     open_list.sort(reverse=True)
-#     close_list.sort(reverse=True)
-#     high_list.sort(reverse=True)
-#     low_list.sort(reverse=True)
 
 def similarity_two_sections(first_section, second_section):
     similarities_list = []
