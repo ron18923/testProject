@@ -7,6 +7,7 @@ from gemini.gemini_core.gemini_master import Gemini
 from gemini.helpers import poloniex, analyze
 
 # TODO - optimize params
+import calculations
 
 PAIR = "BTC_USDT"
 DAYS_HISTORY = 100
@@ -165,8 +166,11 @@ if __name__ == '__main__':
     #
     # similarity_between_two_candles(last_candle, second_last_candle)
 
-    first_section = data_df.iloc[0:10]
-    second_section = data_df.iloc[28000:28010]
-    similarity_two_sections(first_section, second_section)
+    # first_section = data_df.iloc[0:10]
+    # second_section = data_df.iloc[28000:28010]
+    # similarity_two_sections(first_section, second_section)
+
+    Calculations.manual_similarity_measure([2, 4], [3, 6], [4, 8])
+
     # backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
     # backtesting_engine.run(data=data_df)
