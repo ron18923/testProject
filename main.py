@@ -1,6 +1,6 @@
 import logging
 import math
-
+import calculations as cl
 import gemini
 from gemini.gemini_core.exchange import OpenedTrade
 from gemini.gemini_core.gemini_master import Gemini
@@ -131,6 +131,7 @@ def similarity_between_two_candles(first_candle, second_candle):
     return 1 - math.sqrt((open_diff_pow + close_diff_pow + high_diff_pow + low_diff_pow) / 4)
     # Todo check if dividing in integer makes the float number into integer
 
+
 def similarity_two_sections(first_section, second_section):
     similarities_list = []
     percentages_sum = 0
@@ -159,9 +160,14 @@ def trading_strategy(gemini: Gemini, data):
 
 
 if __name__ == '__main__':
-    data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
+    # data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    # last_candle = data_df.iloc[len(data_df) - 1]
+    # print(cl.manual_similarity_measure([98.19, 99.64], [98.32, 99.46], [98.43, 99.39], [98.41, 99.40], [98.57, 99.34], [98.71, 99.33], [98.66, 99.34], [98.72, 99.39], [98.80, 99.34], [98.70, 99.24]))
+    # down below are different trending chunks of charts
+    print(cl.manual_similarity_measure([-.02, .07], [.13, -.18], [.11, -.07], [-.02, .01], [.16, -.06], [.14, -.01], [-.05, .01], [.06, .05], [.08, -.05], [-.10, -.10]))
+    # down below are kinda simillar chunks of charts
+    print(cl.manual_similarity_measure([-.02, .04], [.13, .13], [.11, .16], [-.02, .06], [.16, -.14], [.14, 18], [-.05, -.03], [.06, -.08], [.08, .04], [-.10, .01]))
+# last_candle = data_df.iloc[len(data_df) - 1]
     # second_last_candle = data_df.iloc[len(data_df) - 200]
     #
     # similarity_between_two_candles(last_candle, second_last_candle)
@@ -169,8 +175,6 @@ if __name__ == '__main__':
     # first_section = data_df.iloc[0:10]
     # second_section = data_df.iloc[28000:28010]
     # similarity_two_sections(first_section, second_section)
-
-    Calculations.manual_similarity_measure([2, 4], [3, 6], [4, 8])
 
     # backtesting_engine = Gemini(logic=trading_strategy, sim_params=params, analyze=analyze.analyze_bokeh)
     # backtesting_engine.run(data=data_df)
