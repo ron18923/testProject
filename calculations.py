@@ -2,17 +2,16 @@
 
 import math
 import numpy as np
+import pandas as pd
 
 
 def manual_similarity_measure(first, second):
 
     numerator = 0
-    max_value = np.maximum(first, second)
+    max_value = max(first.nlargest(1).get(0), second.nlargest(1).get(0))
 
-    shorter = max(first, second)
-    denominator = len(shorter)
+    denominator = min(len(first), len(second))
 
-    for index in range(shorter):
-        numerator += (arg[0]/max_value-arg[1]/max_value)**2
-
+    for index in range(denominator):
+        numerator += (first[index]/max_value-second[index]/max_value)**2
     return 1 - math.sqrt(numerator/denominator)

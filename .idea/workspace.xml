@@ -196,7 +196,13 @@
       <option name="presentableId" value="LOCAL‎00010" />
       <updated>1657871051775</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎00011" summary="fixing show_trades not working on the graph">
+      <created>1657895800534</created>
+      <option name="number" value="LOCAL‎00011" />
+      <option name="presentableId" value="LOCAL‎00011" />
+      <updated>1657895800534</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +243,16 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>100</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/calculations.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
