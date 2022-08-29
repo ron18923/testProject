@@ -111,4 +111,4 @@ def trading_strategy(gemini: Gemini, data):
 if __name__ == '__main__':
     data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    print(calculations.manual_similarity_measure(data_df["close"][len(data_df)-20: len(data_df)-10], data_df["close"][len(data_df)-10:]))
+    print(calculations.manual_similarity_measure(data_df["close"][len(data_df)-150: len(data_df)-140], data_df["close"][len(data_df)-10:]))

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="332a1ea1-833e-4333-b59c-d882042dd10a" name="Changes" comment="fixing show_trades not working on the graph">
+    <list default="true" id="332a1ea1-833e-4333-b59c-d882042dd10a" name="Changes" comment="- planning on trying new method, so I am abandoning this project and trying again.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/test.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +21,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/IdeaIC2022.1/python_stubs/-1667621632/builtins.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/site-packages/pandas/core/indexes/base.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/site-packages/pandas/core/indexing.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/gemini/empyrical/stats.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/gemini/gemini_core/exchange.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/gemini/gemini_core/gemini_master.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/gemini/helpers/analyze.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/gemini/helpers/timeframe_resampler.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -190,19 +200,7 @@
       <option name="project" value="LOCAL" />
       <updated>1657732036090</updated>
     </task>
-    <task id="LOCAL‎00010" summary="fixing show_trades not working on the graph">
-      <created>1657871051775</created>
-      <option name="number" value="LOCAL‎00010" />
-      <option name="presentableId" value="LOCAL‎00010" />
-      <updated>1657871051775</updated>
-    </task>
-    <task id="LOCAL‎00011" summary="fixing show_trades not working on the graph">
-      <created>1657895800534</created>
-      <option name="number" value="LOCAL‎00011" />
-      <option name="presentableId" value="LOCAL‎00011" />
-      <updated>1657895800534</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,8 +221,7 @@
     </ignored-roots>
     <MESSAGE value="First day. code based on the Youtube video: https://www.youtube.com/watch?v=iMb8cCkqCPk" />
     <MESSAGE value="- planning on trying new method, so I am abandoning this project and trying again." />
-    <MESSAGE value="fixing show_trades not working on the graph" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing show_trades not working on the graph" />
+    <option name="LAST_COMMIT_MESSAGE" value="- planning on trying new method, so I am abandoning this project and trying again." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -247,12 +244,17 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>113</line>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/calculations.py</url>
-          <line>14</line>
+          <line>28</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/calculations.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -265,7 +267,9 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
+        <watch expression="f = pd.Series({1,2,3})" language="Python" />
         <watch expression="data_df" />
+        <watch expression="f = pd.Series({1,2,3})" language="Python" />
       </configuration>
     </watches-manager>
   </component>
