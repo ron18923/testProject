@@ -1,5 +1,8 @@
 import logging
 import math
+
+import pandas as pd
+
 import calculations as cl
 import gemini
 from gemini.gemini_core.exchange import OpenedTrade
@@ -108,20 +111,45 @@ def trading_strategy(gemini: Gemini, data):
     similarity_between_two_candles(last_candle, second_last_candle)
 
 
+def maxelements(df, n):
+    final_list = pd.DataFrame(columns=['accuracy', 'date', 'close'])
+    list_close_only = df['close'].tolist()
+    comparison_length = 20
+
+    for i in range(0, n):
+        max1 = 0
+        a = 1
+        for j in range(len(df['close'])-comparison_length+1):
+            current_accuracy = calculations.manual_similarity_measure(df['close'][len(df)-j-comparison_length: len(df)-j], data_df['close'][len(data_df)-comparison_length:])
+            if current_accuracy > max1:
+                max1 = current_accuracy
+                date = df.index[len(df)-j-comparison_length]
+                close = df['close'][len(df)-j-comparison_length]
+
+        df = df[df.close != close]
+
+        final_list = final_list.append({'accuracy': max1, 'date': date, 'close': close}, ignore_index=True)
+        a = 1
+    print(final_list)
+
+
 if __name__ == '__main__':
     data_df = poloniex.get_past(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    comparison_length = 60
+    maxelements(data_df, 40)
 
-    highest = calculations.manual_similarity_measure(data_df["close"][len(data_df)-1-comparison_length: len(data_df)-1], data_df["close"][len(data_df)-comparison_length:])
-    date_of_highest = data_df.index[len(data_df)-1-comparison_length]
-    close_of_highest = data_df["close"][len(data_df)-1-comparison_length]
-    for index in range(2, len(data_df)-comparison_length+1):
-        current = calculations.manual_similarity_measure(data_df["close"][len(data_df)-index-comparison_length: len(data_df)-index], data_df["close"][len(data_df)-comparison_length:])
-        if current > highest:
-            highest = current
-            date_of_highest = data_df.index[len(data_df)-index-comparison_length]
-            close_of_highest = data_df["close"][len(data_df)-index-comparison_length]
-    print(highest)
-    print(date_of_highest)
-    print(close_of_highest)
+    # comparison_length = 60
+
+    # highest = calculations.manual_similarity_measure(data_df["close"][len(data_df)-1-comparison_length: len(data_df)-1], data_df["close"][len(data_df)-comparison_length:])
+    # date_of_highest = data_df.index[len(data_df)-1-comparison_length]
+    # close_of_highest = data_df["close"][len(data_df)-1-comparison_length]
+    # for index in range(2, len(data_df)-comparison_length+1):
+    #     current = calculations.manual_similarity_measure(data_df["close"][len(data_df)-index-comparison_length: len(data_df)-index], data_df["close"][len(data_df)-comparison_length:])
+    #     if current > highest:
+    #         highest = current
+    #         date_of_highest = data_df.index[len(data_df)-index-comparison_length]
+    #         close_of_highest = data_df["close"][len(data_df)-index-comparison_length]
+
+    # print(highest)
+    # print(date_of_highest)
+    # print(close_of_highest)
