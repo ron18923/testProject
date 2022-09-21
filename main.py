@@ -9,8 +9,8 @@ from gemini.helpers import poloniex, analyze
 # TODO - optimize params
 import calculations
 
-PAIR = "BTC_USDT"
-DAYS_HISTORY = 100
+PAIR = "USDT_BTC"
+DAYS_HISTORY = 10
 
 """
 PERIOD ALLOWED VALUES:
@@ -109,6 +109,19 @@ def trading_strategy(gemini: Gemini, data):
 
 
 if __name__ == '__main__':
-    data_df = poloniex.load_dataframe(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
+    data_df = poloniex.get_past(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    print(calculations.manual_similarity_measure(data_df["close"][len(data_df)-150: len(data_df)-140], data_df["close"][len(data_df)-10:]))
+    comparison_length = 60
+
+    highest = calculations.manual_similarity_measure(data_df["close"][len(data_df)-1-comparison_length: len(data_df)-1], data_df["close"][len(data_df)-comparison_length:])
+    date_of_highest = data_df.index[len(data_df)-1-comparison_length]
+    close_of_highest = data_df["close"][len(data_df)-1-comparison_length]
+    for index in range(2, len(data_df)-comparison_length+1):
+        current = calculations.manual_similarity_measure(data_df["close"][len(data_df)-index-comparison_length: len(data_df)-index], data_df["close"][len(data_df)-comparison_length:])
+        if current > highest:
+            highest = current
+            date_of_highest = data_df.index[len(data_df)-index-comparison_length]
+            close_of_highest = data_df["close"][len(data_df)-index-comparison_length]
+    print(highest)
+    print(date_of_highest)
+    print(close_of_highest)
