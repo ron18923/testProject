@@ -13,7 +13,7 @@ from gemini.helpers import poloniex, analyze
 import calculations
 
 PAIR = "USDT_BTC"
-DAYS_HISTORY = 100
+DAYS_HISTORY = 2
 
 """
 PERIOD ALLOWED VALUES:
@@ -112,6 +112,9 @@ def trading_strategy(gemini: Gemini, data):
 
 
 def maxelements(df, n):
+    df_unchanged = df
+    # df = df[: len(df)-2]  # shortening the data frame to not search similarity between last part in the data frame
+    # # and himself.
     final_list = pd.DataFrame(columns=['accuracy', 'date', 'close'])
     list_close_only = df['close'].tolist()
     comparison_length = 60
@@ -119,12 +122,12 @@ def maxelements(df, n):
     for i in range(0, n):
         max1 = 0
         a = 1
-        for j in range(len(data_df['close'])-comparison_length+1):
-            current_accuracy = calculations.manual_similarity_measure(data_df['close'][len(data_df)-j-comparison_length: len(data_df)-j], data_df['close'][len(data_df)-comparison_length:])
-            if (current_accuracy > max1) & (df.index.__contains__(data_df.index[len(data_df)-j-comparison_length])):
+        for j in range(5, len(df_unchanged['close'])-comparison_length+1):
+            current_accuracy = calculations.manual_similarity_measure(df_unchanged['close'][len(df_unchanged)-j-comparison_length: len(df_unchanged)-j], df_unchanged['close'][len(df_unchanged)-comparison_length:])
+            if (current_accuracy > max1) & (df.index.__contains__(df_unchanged.index[len(df_unchanged)-j-comparison_length])):
                 max1 = current_accuracy
-                date = df.index[len(data_df)-j-comparison_length]
-                close = df['close'][len(data_df)-j-comparison_length]
+                date = df.index[len(df_unchanged)-j-comparison_length]
+                close = df['close'][len(df_unchanged)-j-comparison_length]
 
         df = df[df.index != date]
 
@@ -136,7 +139,7 @@ def maxelements(df, n):
 if __name__ == '__main__':
     data_df = poloniex.get_past(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
 
-    maxelements(data_df, 3)
+    maxelements(data_df, 10)
 
     # comparison_length = 60
 
