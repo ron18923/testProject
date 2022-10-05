@@ -60,11 +60,14 @@ def get_data(pair, period, days_history=30):
     time_stamp_difference = rounded_timestamp - last_saved_timestamp
 
     items_per_iteration = 100
-    items_amount = time_stamp_difference/period + 1
+
+    items_amount = time_stamp_difference/period
+
     loop_amount = int((items_amount / items_per_iteration) + (1 if items_amount % items_per_iteration > 0 else 0))
 
     df_to_add = pd.DataFrame()
 
+    rounded_timestamp -= period
     for index in range(loop_amount):
         if index != loop_amount - 1:
             start = rounded_timestamp - (items_per_iteration - 1) * period
@@ -77,7 +80,11 @@ def get_data(pair, period, days_history=30):
                 continue
 
             start = rounded_timestamp - (items_left_to_get - 1) * period
-            end = rounded_timestamp
+
+            if items_left_to_get == 1:
+                end = rounded_timestamp+1
+            else:
+                end = rounded_timestamp
             rounded_timestamp = rounded_timestamp - (items_amount % items_per_iteration - 1) * period
 
         data = get_data_from_poloniex(pair, start, end, period)
@@ -92,5 +99,9 @@ def get_data(pair, period, days_history=30):
     df = pd.concat([df, df_to_add])
 
     saved_df = pd.concat([saved_df, df_to_add])
+
+    df = df.drop_duplicates()
+    saved_df = saved_df.drop_duplicates()
+
     load_save_df(pair, period, saved_df)
     return df
