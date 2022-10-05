@@ -30,7 +30,10 @@ def load_save_df(pair, period, save= None):
     """
     file_path = "C:/Users/Ronro/IdeaProjects/test/history_data/" + pair + "-" + str(period) + ".pkl"
     if save is None:
-        df = pd.read_pickle(file_path)
+        try:
+            df = pd.read_pickle(file_path)
+        except FileNotFoundError:
+            return None
         return df
     else:
         save.to_pickle(file_path)
@@ -46,22 +49,25 @@ def make_df_by_date(df):
 def get_data(pair, period, days_history=30):
     saved_df = load_save_df(pair, period)
 
-    last_saved_timestamp = saved_df.index[len(saved_df)-1].timestamp()
-
     items_amount = (24 * 60 * 60 * days_history) / period
     rounded_timestamp = int(time.time() / period) * period
 
-    start_timestamp = rounded_timestamp - items_amount * period
-    start_date = pd.to_datetime(start_timestamp, unit='s')
+    if saved_df is not None:
+        last_saved_timestamp = saved_df.index[len(saved_df)-1].timestamp()
 
-    index = (list(saved_df.index)).index(start_date)
-    df = saved_df[index:]
+        start_timestamp = rounded_timestamp - items_amount * period
+        start_date = pd.to_datetime(start_timestamp, unit='s')
 
-    time_stamp_difference = rounded_timestamp - last_saved_timestamp
+        index = (list(saved_df.index)).index(start_date)
+        df = saved_df[index:]
+
+        time_stamp_difference = rounded_timestamp - last_saved_timestamp
+
+        items_amount = time_stamp_difference/period
+    else:
+        df = pd.DataFrame()
 
     items_per_iteration = 100
-
-    items_amount = time_stamp_difference/period
 
     loop_amount = int((items_amount / items_per_iteration) + (1 if items_amount % items_per_iteration > 0 else 0))
 

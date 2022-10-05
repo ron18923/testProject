@@ -4,6 +4,11 @@ import pandas as pd
 import calculations
 import chart_data
 
+import bokeh.plotting
+
+from bokeh.layouts import row
+from bokeh.models import LinearAxis, Range1d
+
 """
 PERIOD ALLOWED VALUES:
 -number - period in sec-
@@ -14,9 +19,10 @@ PERIOD ALLOWED VALUES:
     * 14400 - 4H
     * 86400 - 1D
 """
-PERIOD = 300
+PERIOD = 900
 PAIR = "USDT_BTC"
-DAYS_HISTORY = 250  # oldest date 08/10/2021(dd/mm/yyyy)
+DAYS_HISTORY = 1500  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
+                     # 900 period, oldest date 12/09/2018
 
 COMPARISON_LENGTH = 70
 
@@ -34,17 +40,10 @@ def max_elements(df, comparison_length):
     return list
 
 
-import bokeh.plotting
-from bokeh.io import show
-
-from bokeh.layouts import row, column, gridplot
-from bokeh.models import LinearAxis, Range1d
-
-
 def display_data(df, similarities):
     bokeh.plotting.output_file("last_results.html")
 
-    length = 11  # the first one will be the main plot, so the for loop will run length-1 times.
+    length = 51  # the first one will be the main plot, so the for loop will run length-1 times.
     plots = [None] * length
 
     main_plot = bokeh.plotting.figure(x_axis_type="datetime", plot_width=410,
@@ -64,7 +63,8 @@ def display_data(df, similarities):
         df_index = list(df.index).index(df_timestamp)
 
         current_plot = bokeh.plotting.figure(x_axis_type="datetime",
-                                             title=str(df_timestamp),
+                                             title=str(df_timestamp) + " | " + str(
+                                                 similarities["accuracy"].iloc[-1 - plot_index]),
                                              plot_width=750,
                                              plot_height=300)
         current_plot.grid.grid_line_alpha = 0.3
@@ -94,59 +94,3 @@ if __name__ == '__main__':
     similarities_list = max_elements(data_df, COMPARISON_LENGTH)
 
     display_data(data_df, similarities_list)
-
-    # p1 = bokeh.plotting.figure(x_axis_type="datetime", plot_width=410,
-    #                            plot_height=300)
-    #
-    # p2 = bokeh.plotting.figure(x_axis_type="datetime", plot_width=750,
-    #                            plot_height=300)
-    #
-    # p3 = bokeh.plotting.figure(x_axis_type="datetime", plot_width=750,
-    #                            plot_height=300)
-    #
-    # p1.grid.grid_line_alpha = 0.3
-    # p1.xaxis.axis_label = 'Date'
-    # p1.yaxis.axis_label = 'Value'
-    # p2.grid.grid_line_alpha = 0.3
-    # p2.xaxis.axis_label = 'Date'
-    # p2.yaxis.axis_label = 'Equity'
-    # p3.grid.grid_line_alpha = 0.3
-    # p3.xaxis.axis_label = 'Date'
-    # p3.yaxis.axis_label = 'Equity'
-    #
-    # p1.line(data_df.index[len(data_df) - COMPARISON_LENGTH:], data_df["close"][len(data_df) - COMPARISON_LENGTH:],
-    #         color='#00fffb', )
-    #
-    # timestamp = similarities_list["date"].iloc[-1]
-    # index = list(data_df.index).index(timestamp)
-    # p2.line(data_df.index[index:index + COMPARISON_LENGTH * 2], data_df["close"][index:index + COMPARISON_LENGTH * 2],
-    #         color='#00fffb', )
-    #
-    # p2.extra_x_ranges = {"x": Range1d(start=0, end=1)}
-    #
-    # p2.add_layout(LinearAxis(x_range_name="x"), 'above')
-    #
-    # divider = bokeh.models.Span(location=0.5,
-    #                             dimension="height",
-    #                             line_color="black",
-    #                             x_range_name="x")
-    # p2.add_layout(divider)
-    #
-    # timestamp = similarities_list["date"].iloc[-2]
-    # index = list(data_df.index).index(timestamp)
-    # p3.line(data_df.index[index:index + COMPARISON_LENGTH * 2], data_df["close"][index:index + COMPARISON_LENGTH * 2],
-    #         color='#00fffb', )
-    #
-    # p3.extra_x_ranges = {"x": Range1d(start=0, end=1)}
-    #
-    # # Adding the second axis to the plot.
-    # p3.add_layout(LinearAxis(x_range_name="x"), 'above')
-    #
-    # divider = bokeh.models.Span(location=0.5,
-    #                             dimension="height",
-    #                             line_color="black",
-    #                             x_range_name="x")
-    # p3.add_layout(divider)
-    #
-    # bokeh.plotting.show(bokeh.layouts.column(p1, p2, p3))
-    # pass
