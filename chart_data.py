@@ -1,4 +1,5 @@
 import logging
+import os
 import time
 import traceback
 
@@ -28,7 +29,7 @@ def load_save_df(pair, period, save= None):
     :param save: add dataframe to save, else data will be loaded.
     :return: returns the file with the needed dataframe
     """
-    file_path = "C:/Users/Ronro/IdeaProjects/test/history_data/" + pair + "-" + str(period) + ".pkl"
+    file_path = "C:/Users/97252/IdeaProjects/test/history_data/" + pair + "-" + str(period) + ".pkl"
     if save is None:
         try:
             df = pd.read_pickle(file_path)
