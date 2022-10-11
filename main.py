@@ -21,10 +21,10 @@ PERIOD ALLOWED VALUES:
 """
 PERIOD = 300
 PAIR = "USDT_BTC"
-DAYS_HISTORY = 2  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
+DAYS_HISTORY = 365  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
 # 900 period, oldest date 12/09/2018
 
-COMPARISON_LENGTH = 10
+COMPARISON_LENGTH = 150
 
 
 def without_unintended_results(results_list, period):
@@ -57,9 +57,9 @@ def max_elements(df, comparison_length):
 def display_data(df, similarities):
     bokeh.plotting.output_file("last_results.html")
 
-    small_plot_width = 410
+    small_plot_width = 530
     small_plot_height = 350
-    large_plot_width = 750
+    large_plot_width = 1000
     large_plot_height = 350
 
     length = 51  # the first one will be the main plot, so the for loop will run length-1 times.

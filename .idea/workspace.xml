@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="332a1ea1-833e-4333-b59c-d882042dd10a" name="Changes" comment="added a function to delete unintended results from the similarity results">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/history_data/USDT_BTC-300.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/history_data/USDT_BTC-300.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/last_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/last_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="332a1ea1-833e-4333-b59c-d882042dd10a" name="Changes" comment="-" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -250,7 +245,13 @@
       <option name="presentableId" value="LOCAL‎00017" />
       <updated>1665138705486</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎00018" summary="-">
+      <created>1665484716567</created>
+      <option name="number" value="LOCAL‎00018" />
+      <option name="presentableId" value="LOCAL‎00018" />
+      <updated>1665484716567</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +273,8 @@
     <MESSAGE value="First day. code based on the Youtube video: https://www.youtube.com/watch?v=iMb8cCkqCPk" />
     <MESSAGE value="- planning on trying new method, so I am abandoning this project and trying again." />
     <MESSAGE value="added a function to delete unintended results from the similarity results" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a function to delete unintended results from the similarity results" />
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
