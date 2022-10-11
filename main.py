@@ -19,12 +19,12 @@ PERIOD ALLOWED VALUES:
     * 14400 - 4H
     * 86400 - 1D
 """
-PERIOD = 300
+PERIOD = 900
 PAIR = "USDT_BTC"
 DAYS_HISTORY = 365  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
 # 900 period, oldest date 12/09/2018
 
-COMPARISON_LENGTH = 150
+COMPARISON_LENGTH = 70
 
 
 def without_unintended_results(results_list, period):
