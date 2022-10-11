@@ -21,20 +21,19 @@ PERIOD ALLOWED VALUES:
 """
 PERIOD = 300
 PAIR = "USDT_BTC"
-DAYS_HISTORY = 10  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
-                     # 900 period, oldest date 12/09/2018
+DAYS_HISTORY = 2  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
+# 900 period, oldest date 12/09/2018
 
-COMPARISON_LENGTH = 70
+COMPARISON_LENGTH = 10
 
 
 def without_unintended_results(results_list, period):
-
     results_date = results_list["date"]
 
     for index in range(1, len(results_date) + 1):
         time = results_date.iloc[len(results_date) - index]
         for j in range(1, 4):
-            time_to_delete = time + pd.to_timedelta(period*j, unit='s')
+            time_to_delete = time + pd.to_timedelta(period * j, unit='s')
             results_list = results_list.drop(results_list.index[results_list['date'] == time_to_delete])
     return results_list
 
@@ -49,7 +48,8 @@ def max_elements(df, comparison_length):
 
         date = df.index[len(df) - j - comparison_length]
         close = df['close'][len(df) - j - comparison_length]
-        results_list = pd.concat([results_list, pd.DataFrame({'accuracy': [accuracy], 'date': [date], 'close': [close]})], ignore_index=True)
+        results_list = pd.concat(
+            [results_list, pd.DataFrame({'accuracy': [accuracy], 'date': [date], 'close': [close]})], ignore_index=True)
     results_list = results_list.sort_values(by=['accuracy'])
     return results_list
 
@@ -57,11 +57,21 @@ def max_elements(df, comparison_length):
 def display_data(df, similarities):
     bokeh.plotting.output_file("last_results.html")
 
+    small_plot_width = 410
+    small_plot_height = 350
+    large_plot_width = 750
+    large_plot_height = 350
+
     length = 51  # the first one will be the main plot, so the for loop will run length-1 times.
     plots = [None] * length
 
-    main_plot = bokeh.plotting.figure(x_axis_type="datetime", plot_width=410,
-                                      plot_height=300)
+    df_timestamp = data_df.index[len(data_df) - COMPARISON_LENGTH]
+
+    main_plot = bokeh.plotting.figure(x_axis_type="datetime",
+                                      # adding title here mainly to make the height exactly as the other plots
+                                      title=str(df_timestamp),
+                                      plot_width=small_plot_width,
+                                      plot_height=small_plot_height)
     main_plot.grid.grid_line_alpha = 0.3
     main_plot.xaxis.axis_label = 'Date'
     main_plot.yaxis.axis_label = 'Value'
@@ -70,43 +80,58 @@ def display_data(df, similarities):
                    data_df["close"][len(data_df) - COMPARISON_LENGTH:],
                    color='#00fffb', )
 
-    plots[0] = main_plot
+    main_plot.extra_x_ranges = {"x": Range1d(start=0, end=1)}
+
+    main_plot.add_layout(LinearAxis(x_range_name="x"), 'above')
+
+    plots[0] = [main_plot, None]
 
     for plot_index in range(1, length):
-        df_timestamp = similarities["date"].iloc[-1 - plot_index]
+        df_timestamp = similarities["date"].iloc[(-plot_index)]
         df_index = list(df.index).index(df_timestamp)
 
-        current_plot = bokeh.plotting.figure(x_axis_type="datetime",
-                                             title=str(df_timestamp) + " | " + str(
-                                                 similarities["accuracy"].iloc[-1 - plot_index]),
-                                             plot_width=750,
-                                             plot_height=300)
-        current_plot.grid.grid_line_alpha = 0.3
-        current_plot.xaxis.axis_label = 'Date'
-        current_plot.yaxis.axis_label = 'Value'
+        full_plot = bokeh.plotting.figure(x_axis_type="datetime",
+                                          title=str(df_timestamp) + " | " + str(
+                                              similarities["accuracy"].iloc[(-plot_index)]),
+                                          plot_width=large_plot_width,
+                                          plot_height=large_plot_height)
+        full_plot.grid.grid_line_alpha = 0.3
+        full_plot.xaxis.axis_label = 'Date'
+        full_plot.yaxis.axis_label = 'Value'
 
-        current_plot.line(data_df.index[df_index:df_index + COMPARISON_LENGTH * 2],
-                          data_df["close"][df_index:df_index + COMPARISON_LENGTH * 2],
-                          color='#00fffb', )
+        full_plot.line(data_df.index[df_index:df_index + COMPARISON_LENGTH * 2],
+                       data_df["close"][df_index:df_index + COMPARISON_LENGTH * 2],
+                       color='#00fffb', )
 
-        current_plot.extra_x_ranges = {"x": Range1d(start=0, end=1)}
+        full_plot.extra_x_ranges = {"x": Range1d(start=0, end=1)}
 
-        current_plot.add_layout(LinearAxis(x_range_name="x"), 'above')
+        full_plot.add_layout(LinearAxis(x_range_name="x"), 'above')
 
         divider = bokeh.models.Span(location=0.5,
                                     dimension="height",
                                     line_color="black",
                                     x_range_name="x")
-        current_plot.add_layout(divider)
+        full_plot.add_layout(divider)
 
-        plots[plot_index] = current_plot
-    bokeh.plotting.show(bokeh.layouts.column(plots))
+        comparing_plot = bokeh.plotting.figure(x_axis_type="datetime",
+                                               plot_width=small_plot_width,
+                                               plot_height=small_plot_height)
+        comparing_plot.grid.grid_line_alpha = 0.3
+        comparing_plot.xaxis.axis_label = 'Date'
+        comparing_plot.yaxis.axis_label = 'Value'
+
+        comparing_plot.line(data_df.index[df_index:df_index + COMPARISON_LENGTH],
+                       data_df["close"][df_index:df_index + COMPARISON_LENGTH],
+                       color='#00fffb', )
+
+        plots[plot_index] = [full_plot, comparing_plot]
+    bokeh.plotting.show(bokeh.layouts.gridplot(plots))
 
 
 if __name__ == '__main__':
     data_df = chart_data.get_data(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
     similarities_list = max_elements(data_df, COMPARISON_LENGTH)
 
-    similarities_list = without_unintended_results(similarities_list, PERIOD)
+    # similarities_list = without_unintended_results(similarities_list, PERIOD)
 
     display_data(data_df, similarities_list)
