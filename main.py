@@ -19,12 +19,13 @@ PERIOD ALLOWED VALUES:
     * 14400 - 4H
     * 86400 - 1D
 """
-PERIOD = 900
+PERIOD = 300
 PAIR = "USDT_BTC"
 DAYS_HISTORY = 365  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
 # 900 period, oldest date 12/09/2018
 
-COMPARISON_LENGTH = 70
+COMPARISON_LENGTH = 30
+# current default value - compar len 70, history 365
 
 
 def without_unintended_results(results_list, period):
@@ -44,7 +45,7 @@ def max_elements(df, comparison_length):
     for j in range(5, len(df['close']) - comparison_length + 1):
         first = pd.to_numeric(df['close'][len(df) - j - comparison_length: len(df) - j])
         second = pd.to_numeric(df['close'][len(df) - comparison_length:])
-        accuracy = calculations.manual_similarity_measure(first, second)
+        accuracy = calculations.manual_similarity_measure2(first, second)
 
         date = df.index[len(df) - j - comparison_length]
         close = df['close'][len(df) - j - comparison_length]
@@ -87,7 +88,8 @@ def display_data(df, similarities):
     plots[0] = [main_plot, None]
 
     for plot_index in range(1, length):
-        df_timestamp = similarities["date"].iloc[(-plot_index)]
+        list_index = plot_index - 1
+        df_timestamp = similarities["date"].iloc[list_index]
         df_index = list(df.index).index(df_timestamp)
 
         full_plot = bokeh.plotting.figure(x_axis_type="datetime",
@@ -121,10 +123,10 @@ def display_data(df, similarities):
         comparing_plot.yaxis.axis_label = 'Value'
 
         comparing_plot.line(data_df.index[df_index:df_index + COMPARISON_LENGTH],
-                       data_df["close"][df_index:df_index + COMPARISON_LENGTH],
-                       color='#00fffb', )
+                            data_df["close"][df_index:df_index + COMPARISON_LENGTH],
+                            color='#00fffb', )
 
-        plots[plot_index] = [full_plot, comparing_plot]
+        plots[plot_index] = [full_plot, comparing_plot]  # 1 is added to plot index to not delete the main plot.
     bokeh.plotting.show(bokeh.layouts.gridplot(plots))
 
 
