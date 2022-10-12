@@ -24,7 +24,9 @@ PAIR = "USDT_BTC"
 DAYS_HISTORY = 365  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
 # 900 period, oldest date 12/09/2018
 
-COMPARISON_LENGTH = 30
+COMPARISON_LENGTH = 70
+
+
 # current default value - compar len 70, history 365
 
 
@@ -89,7 +91,8 @@ def display_data(df, similarities):
 
     for plot_index in range(1, length):
         list_index = plot_index - 1
-        df_timestamp = similarities["date"].iloc[list_index]
+        df_timestamp = similarities["date"].iloc[list_index]  # write "-1-list_index" instead of "list_index" to take
+        # from the end of the list first.
         df_index = list(df.index).index(df_timestamp)
 
         full_plot = bokeh.plotting.figure(x_axis_type="datetime",
