@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="332a1ea1-833e-4333-b59c-d882042dd10a" name="Changes" comment="-">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/history_data/USDT_BTC-300.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/history_data/USDT_BTC-300.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/history_data/USDT_BTC-3600.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/history_data/USDT_BTC-3600.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/history_data/USDT_BTC-900.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/history_data/USDT_BTC-900.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/last_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/last_results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -274,7 +277,13 @@
       <option name="presentableId" value="LOCAL‎00021" />
       <updated>1665572053172</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL‎00022" summary="-">
+      <created>1665830431069</created>
+      <option name="number" value="LOCAL‎00022" />
+      <option name="presentableId" value="LOCAL‎00022" />
+      <updated>1665830431069</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -314,23 +323,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>144</line>
+          <line>148</line>
           <option name="timeStamp" value="256" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>68</line>
-          <option name="timeStamp" value="257" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="258" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>153</line>
-          <option name="timeStamp" value="259" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

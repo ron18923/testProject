@@ -19,9 +19,9 @@ PERIOD ALLOWED VALUES:
     * 14400 - 4H
     * 86400 - 1D
 """
-PERIOD = 900
+PERIOD = 300
 PAIR = "USDT_BTC"
-DAYS_HISTORY = 1000  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
+DAYS_HISTORY = 2  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
 # 900 period, oldest date 12/09/2018
 
 COMPARISON_LENGTH = 20
@@ -59,7 +59,7 @@ def max_elements(df, comparison_length):
     for j in range(5, len(df['close']) - comparison_length + 1):
         first = pd.to_numeric(df['close'][len(df) - j - comparison_length: len(df) - j])
         second = pd.to_numeric(df['close'][len(df) - comparison_length:])
-        accuracy = calculations.manual_similarity_measure2(first, second)
+        accuracy = calculations.manual_similarity_measure2(first, second, upscale=True)
 
         date = df.index[len(df) - j - comparison_length]
         close = df['close'][len(df) - j - comparison_length]
@@ -82,9 +82,12 @@ def display_data(df, similarities, length):
 
     df_timestamp = data_df.index[len(data_df) - COMPARISON_LENGTH]
 
+    ma_results = calculations.moving_average(df, 0, 200)
+
     main_plot = bokeh.plotting.figure(x_axis_type="datetime",
                                       # adding title here mainly to make the height exactly as the other plots
-                                      title=str(df_timestamp),
+                                      title=str(df_timestamp) + "| ma: " + str(ma_results[0]) + " is uptrend: " +
+                                      str(ma_results[1]),
                                       plot_width=small_plot_width,
                                       plot_height=small_plot_height)
     main_plot.grid.grid_line_alpha = 0.3
@@ -109,7 +112,8 @@ def display_data(df, similarities, length):
 
         full_plot = bokeh.plotting.figure(x_axis_type="datetime",
                                           title=str(df_timestamp) + " | " + str(
-                                              similarities["accuracy"].iloc[(plot_index-1)]),  # uninverted function would be "-plot_index"
+                                              similarities["accuracy"].iloc[(plot_index - 1)]),
+                                          # uninverted function would be "-plot_index"
                                           plot_width=large_plot_width,
                                           plot_height=large_plot_height)
         full_plot.grid.grid_line_alpha = 0.3
