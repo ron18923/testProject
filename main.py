@@ -19,22 +19,34 @@ PERIOD ALLOWED VALUES:
     * 14400 - 4H
     * 86400 - 1D
 """
-PERIOD = 300
+PERIOD = 900
 PAIR = "USDT_BTC"
-DAYS_HISTORY = 365  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
+DAYS_HISTORY = 1000  # 300 period, oldest date 08/10/2021(dd/mm/yyyy)
 # 900 period, oldest date 12/09/2018
 
-COMPARISON_LENGTH = 70
-
+COMPARISON_LENGTH = 20
 
 # current default value - compar len 70, history 365
 
+LENGTH = 50  # how many to display
 
-def without_unintended_results(results_list, period):
+
+# THIS IS THE UNINVERTED FUNCTION(FROM END TO START)
+# def without_unintended_results(results_list, period, length):
+#     results_date = results_list["date"]
+#
+#     for index in range(1, length + 1):
+#         time = results_date.iloc[len(results_date) - index]
+#         for j in range(1, 4):
+#             time_to_delete = time + pd.to_timedelta(period * j, unit='s')
+#             results_list = results_list.drop(results_list.index[results_list['date'] == time_to_delete])
+#     return results_list
+
+def without_unintended_results(results_list, period, length):
     results_date = results_list["date"]
 
-    for index in range(1, len(results_date) + 1):
-        time = results_date.iloc[len(results_date) - index]
+    for index in range(length):
+        time = results_date.iloc[index]
         for j in range(1, 4):
             time_to_delete = time + pd.to_timedelta(period * j, unit='s')
             results_list = results_list.drop(results_list.index[results_list['date'] == time_to_delete])
@@ -57,7 +69,7 @@ def max_elements(df, comparison_length):
     return results_list
 
 
-def display_data(df, similarities):
+def display_data(df, similarities, length):
     bokeh.plotting.output_file("last_results.html")
 
     small_plot_width = 530
@@ -65,7 +77,7 @@ def display_data(df, similarities):
     large_plot_width = 1000
     large_plot_height = 350
 
-    length = 51  # the first one will be the main plot, so the for loop will run length-1 times.
+    length += 1  # the first one will be the main plot, so the for loop will run length-1 times.
     plots = [None] * length
 
     df_timestamp = data_df.index[len(data_df) - COMPARISON_LENGTH]
@@ -92,12 +104,12 @@ def display_data(df, similarities):
     for plot_index in range(1, length):
         list_index = plot_index - 1
         df_timestamp = similarities["date"].iloc[list_index]  # write "-1-list_index" instead of "list_index" to take
-        # from the end of the list first.
+        # from the end of the list first. (uninverted)
         df_index = list(df.index).index(df_timestamp)
 
         full_plot = bokeh.plotting.figure(x_axis_type="datetime",
                                           title=str(df_timestamp) + " | " + str(
-                                              similarities["accuracy"].iloc[(-plot_index)]),
+                                              similarities["accuracy"].iloc[(plot_index-1)]),  # uninverted function would be "-plot_index"
                                           plot_width=large_plot_width,
                                           plot_height=large_plot_height)
         full_plot.grid.grid_line_alpha = 0.3
@@ -137,6 +149,6 @@ if __name__ == '__main__':
     data_df = chart_data.get_data(pair=PAIR, period=PERIOD, days_history=DAYS_HISTORY)
     similarities_list = max_elements(data_df, COMPARISON_LENGTH)
 
-    # similarities_list = without_unintended_results(similarities_list, PERIOD)
+    similarities_list_without_unintended_results = without_unintended_results(similarities_list, PERIOD, LENGTH)
 
-    display_data(data_df, similarities_list)
+    display_data(data_df, similarities_list_without_unintended_results, LENGTH)
