@@ -7,7 +7,7 @@ import chart_data
 import bokeh.plotting
 
 from bokeh.layouts import row
-from bokeh.models import LinearAxis, Range1d
+from bokeh.models import LinearAxis, Range1d, Label
 
 """
 PERIOD ALLOWED VALUES:
@@ -82,12 +82,20 @@ def display_data(df, similarities, length):
 
     df_timestamp = data_df.index[len(data_df) - COMPARISON_LENGTH]
 
-    ma_results = calculations.moving_average(df, 0, 200)
+    ma200_results = calculations.moving_average(df, 0, 200)
+    ma50_results = calculations.moving_average(df, 0, 50)
+    ma25_results = calculations.moving_average(df, 0, 25)
+
+    print("ma200: " + str(round(ma200_results[0], 1)) + " | trend: " + "Up" if str(ma200_results[1]) else "Down")
+    print("ma50: " + str(round(ma50_results[0], 1)) + " | trend: " + "Up" if str(ma50_results[1]) else "Down")
+    print("ma25: " + str(round(ma25_results[0], 1)) + " | trend: " + "Up" if str(ma25_results[1]) else "Down")
+
+    main_plot_title = str(df_timestamp) + " | ma200: " + str(ma200_results[1]) + " | ma50: " + str(
+        ma50_results[1]) + " | ma25: " + str(ma25_results[1])
 
     main_plot = bokeh.plotting.figure(x_axis_type="datetime",
                                       # adding title here mainly to make the height exactly as the other plots
-                                      title=str(df_timestamp) + "| ma: " + str(ma_results[0]) + " is uptrend: " +
-                                      str(ma_results[1]),
+                                      title=main_plot_title,
                                       plot_width=small_plot_width,
                                       plot_height=small_plot_height)
     main_plot.grid.grid_line_alpha = 0.3
@@ -110,10 +118,15 @@ def display_data(df, similarities, length):
         # from the end of the list first. (uninverted)
         df_index = list(df.index).index(df_timestamp)
 
+        ma200_results = calculations.moving_average(df, 0, 200)
+        ma50_results = calculations.moving_average(df, 0, 50)
+        ma25_results = calculations.moving_average(df, 0, 25)
+
+        plot_title = str(df_timestamp) + " | " + str(round(similarities["accuracy"].iloc[(plot_index - 1)], 2))
+        # uninverted function would be "-plot_index"
+
         full_plot = bokeh.plotting.figure(x_axis_type="datetime",
-                                          title=str(df_timestamp) + " | " + str(
-                                              similarities["accuracy"].iloc[(plot_index - 1)]),
-                                          # uninverted function would be "-plot_index"
+                                          title=plot_title,
                                           plot_width=large_plot_width,
                                           plot_height=large_plot_height)
         full_plot.grid.grid_line_alpha = 0.3
